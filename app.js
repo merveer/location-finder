@@ -14,10 +14,10 @@ const argv = yargs // obj that stores final parsed output
     .alias("help", "h")
     .argv;
 
-console.log(argv);
+var encodedAddress = encodeURIComponent(argv.a);
 
 request({
-    url: "http://maps.googleapis.com/maps/api/geocode/json?address=cankaya",
+    url: `http://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,
     json:true
 }, (error, response, body) => {
     console.log(`Address: ${body.results[0].formatted_address}`);
