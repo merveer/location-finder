@@ -16,18 +16,17 @@ const argv = yargs // obj that stores final parsed output
     .alias("help", "h")
     .argv;
 
-// geocode.geocodeAddress(argv.address, (errorMessage, results) => {
-//     if (errorMessage) {
-//         console.log(errorMessage);
-//     } else {
-//         console.log(JSON.stringify(results, undefined ,2));
-//     }
-// });
-
-weather.getWeather(39.8451842, 32.9212265 , (errorMessage, weatherResults) => {
-    if(errorMessage) {
+geocode.geocodeAddress(argv.address, (errorMessage, results) => {
+    if (errorMessage) {
         console.log(errorMessage);
     } else {
-        console.log(JSON.stringify(weatherResults, undefined, 2));
+        console.log(results.Address);
+        weather.getWeather(results.Latitude , results.Longitude , (errorMessage, weatherResults) => {
+            if(errorMessage) {
+                console.log(errorMessage);
+            } else {
+                console.log(`It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}`);
+            }
+        });
     }
 });
