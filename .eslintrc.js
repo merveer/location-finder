@@ -1,4 +1,5 @@
-module.exports = {
+export default {
+    "node": true,
     "env": {
         "browser": true,
         "commonjs": false,
