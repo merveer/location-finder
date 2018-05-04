@@ -10,9 +10,7 @@ const getWeather = (lat, lng, callback) => {
                 temperature: body.currently.temperature + " °F",
                 apparentTemperature: body.currently.apparentTemperature + " °F"
             });
-        } else {
-            callback("Unable to fetch the weather");
-        }
+        } return callback("Unable to fetch the weather");
     });
 };
 module.exports.getWeather = getWeather;

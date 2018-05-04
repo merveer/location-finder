@@ -17,16 +17,14 @@ const argv = yargs // obj that stores final parsed output
     .argv;
 
 geocode.geocodeAddress(argv.address, (errorMessage, results) => {
-    if (errorMessage) {
-        console.log(errorMessage);
-    } else {
+    if (!errorMessage) {
         console.log(results.Address);
         weather.getWeather(results.Latitude , results.Longitude , (errorMessage, weatherResults) => {
-            if(errorMessage) {
-                console.log(errorMessage);
-            } else {
+            if(!errorMessage)  {
                 console.log(`It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}`);
-            }
+                return;
+            } return console.log(errorMessage);
         });
-    }
+        return;
+    }  return console.log(errorMessage);
 });
