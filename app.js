@@ -23,8 +23,12 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
             if(!errorMessage)  {
                 console.log(`It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}`);
                 return;
-            } return console.log(errorMessage);
+            }
+
+            return console.log(errorMessage);
         });
         return;
-    }  return console.log(errorMessage);
+    }
+
+    return console.log(errorMessage);
 });

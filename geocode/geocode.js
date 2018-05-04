@@ -10,6 +10,7 @@ const geocodeAddress = (address, callback) => {
         if(error || body.status === "ZERO_RESULTS"  ){
             callback("Unable to find the address");
         }
+
         else if(body.status === "OK") {
             callback(undefined, {
                 Address: body.results[0].formatted_address,
