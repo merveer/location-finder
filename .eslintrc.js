@@ -1,24 +1,25 @@
-export default {
-    "node": true,
-    "env": {
-        "browser": true,
-        "commonjs": false,
-        "es6": false
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
+    module.exports = {
+        "env": {
+            "browser": true,
+            "node": true,
+            "es6": true,
+            "commonjs": true
+        },
+        "extends": "eslint:recommended",
+        "parserOptions": {
+            "ecmaFeatures": {
+        "jsx": true
         },
         "sourceType": "module"
     },
-    "rules": {
-        "indent": [
+        "rules": {
+            'no-console': 'off',
+            "indent": [
             "error",
             4
         ],
         "linebreak-style": [
-            "error",
+        "error",
             "unix"
         ],
         "quotes": [
@@ -26,8 +27,8 @@ export default {
             "double"
         ],
         "semi": [
-            "error",
-            "always"
+        "error",
+        "always"
         ]
     }
 };
