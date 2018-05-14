@@ -26,8 +26,8 @@ axios.get(geocodeUrl).then((response) => {
     const lng = response.data.results[0].geometry.location.lng;
     const weatherUrl = `https://api.darksky.net/forecast/2f7b1061bf35a572f6051ebff7485e45/${lat},${lng}`;
     console.log(response.data.results[0].formatted_address);
-    return axios.get(weatherUrl); // chain calls together
-}).then((response) => { // called when the weather data comes back
+    return axios.get(weatherUrl);
+}).then((response) => {
     const temperature = response.data.currently.temperature;
     const apparentTemperature = response.data.currently.temperature;
     console.log(`It's currently ${temperature}. It feels like ${apparentTemperature}`);
