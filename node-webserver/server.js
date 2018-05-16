@@ -31,3 +31,5 @@ app.get("/about", (req, res) => { // set up a handler for HTTP req
 app.listen(3000, () => {
     console.log("App is working on 3000");
 }); // bind the app to port in our machine
+
+module.exports = app;

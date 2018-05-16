@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --verbose --watch"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +12,10 @@
     "axios": "^0.18.0",
     "request": "^2.85.0",
     "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nyc": "^11.8.0",
+    "supertest": "^3.1.0"
   }
 }
