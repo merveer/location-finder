@@ -28,6 +28,10 @@ app.get("/about", (req, res) => { // set up a handler for HTTP req
     });
 });
 
+app.get("/404", (req, res) => { // set up a handler for HTTP req
+    return res.status(404).json("Page not found");
+});
+
 app.listen(3000, () => {
     console.log("App is working on 3000");
 }); // bind the app to port in our machine
