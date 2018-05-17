@@ -29,7 +29,7 @@ app.get("/about", (req, res) => { // set up a handler for HTTP req
 });
 
 app.get("/404", (req, res) => { // set up a handler for HTTP req
-    return res.status(404).json("Page not found");
+    return res.send(404);
 });
 
 app.listen(3000, () => {

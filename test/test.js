@@ -21,14 +21,9 @@ test.cb("Internal Server Error", function (t) {
         });
 });
 
-test.cb("Page is not found", function (t) {
+test.cb("Page not found", function (t) {
     request(app)
         .get("/404")
-        .expect("Content-Type", /json/)
-        .expect(404)
-        .expect("\"Page not found\"")
-        .end(function (err) {
-            if (err) return(err);
-            t.end();
-        });
+        .expect(404);
+    t.end();
 });
